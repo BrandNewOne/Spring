@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="members" type="dto.Members"/>
+		<typeAlias alias="schedule" type="dto.Schedule"/>
+		<typeAlias alias="boards" type="dto.Boards"/>
+		<typeAlias alias="reply" type="dto.Reply"/>
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="mapper/board-Mapper.xml"/>
+		<mapper resource="mapper/reply-Mapper.xml"/>
+		<mapper resource="mapper/user-Mapper.xml"/>
+	</mappers>
+</configuration>

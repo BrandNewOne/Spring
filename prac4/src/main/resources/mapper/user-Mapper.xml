@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.user-Mapper">
+
+	
+	<select id="selectMember" resultType="members">
+		SELECT * FROM member
+	</select> 
+	
+	<select id="getUserOne" resultType="members">
+		SELECT * FROM member
+		<if test="id != null">
+		WHERE id = #{id};
+		</if>
+	</select>
+
+	<insert id="userJoin">
+		insert into member
+		(id,pw,name,email,color)
+		values
+		(#{id},#{pw},#{name},#{email},#{color})
+	</insert>
+	
+	<select id="selectSchedule" resultType="Schedule">
+		SELECT * FROM schedule
+	</select>
+	
+	
+	<insert id="inputSchedule">
+		insert into schedule
+		(title,start,end,id,color)
+		values
+		(#{title},#{start},#{end},#{id},#{color})
+	</insert>
+	
+	<select id="selectMySchedule" resultType="Schedule">
+		SELECT * FROM schedule WHERE id = #{id}
+	</select>
+	
+	<delete id="deleteSchedule">
+		delete from schedule where title = #{title} and start = #{start} and end = #{end} 
+	</delete>
+	
+	
+	
+	
+
+</mapper>
